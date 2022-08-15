@@ -283,6 +283,7 @@ class PauseSubState extends MusicBeatSubstate
 				if (exitStateTimeDelay <= 0.0)
 				{
 					closeState();
+					inMenu = false;
 					resumin();
 				}
 			case 'Options':
@@ -294,6 +295,7 @@ class PauseSubState extends MusicBeatSubstate
 					setBrightness(0);
 
 					OptionsMenu.fromFreeplay = true;
+					inMenu = false;
 					FlxG.switchState(new OptionsMenu());
 				}
 			case "Restart Song":
@@ -303,6 +305,8 @@ class PauseSubState extends MusicBeatSubstate
 
 					PlayState.instance.defaultBrightVal = 0;
 					setBrightness(0);
+
+					inMenu = false;
 
 					PlayState.instance.playerDie();
 					close();
