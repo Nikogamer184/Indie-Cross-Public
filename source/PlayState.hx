@@ -4985,7 +4985,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	public var paused:Bool = false;
+	private var paused:Bool = false;
 	var startedCountdown:Bool = false;
 	var canPause:Bool = true;
 	var nps:Int = 0;
