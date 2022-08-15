@@ -365,16 +365,14 @@ class FlxTypedButton<T:FlxSprite> extends FlxSprite implements IFlxInput
 
 	function checkTouchOverlap():Bool
 	{
-		if (PlayStateChangeables.botPlay) {
-			var overlap = false;
+		var overlap = false;
 
-			for (camera in cameras)
-				for (touch in FlxG.touches.list)
-					if (checkInput(touch, touch, touch.justPressedPosition, camera))
-						overlap = true;
+		for (camera in cameras)
+			for (touch in FlxG.touches.list)
+				if (checkInput(touch, touch, touch.justPressedPosition, camera))
+					overlap = true;
 
-			return overlap;
-		}
+		return overlap;
 	}
 
 	function checkInput(pointer:FlxPointer, input:IFlxInput, justPressedPosition:FlxPoint, camera:FlxCamera):Bool
