@@ -46,6 +46,8 @@ class PauseSubState extends MusicBeatSubstate
 
 	var controlsOverlay:ControlsOverlay;
 
+	public static var inMenu:Bool = false;
+
 	public function new()
 	{
 		super();
@@ -204,6 +206,8 @@ class PauseSubState extends MusicBeatSubstate
 		{
 			exitStateTimeDelay -= 0.11;
 		}, 5);
+
+		inMenu = true;
 	}
 
 	override function update(elapsed:Float)
@@ -306,6 +310,8 @@ class PauseSubState extends MusicBeatSubstate
 			case "Exit to menu":
 				if (exitStateTimeDelay <= 0.0)
 				{
+					inMenu = false;
+					
 					if (PlayState.isStoryMode)
 					{
 						StoryMenuState.leftDuringWeek = true;
