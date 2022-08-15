@@ -267,7 +267,7 @@ class FlxTypedButton<T:FlxSprite> extends FlxSprite implements IFlxInput
 	{
 		super.update(elapsed);
 
-		if (!PlayStateChangeables.botPlay || PlayState.paused) {
+		if (!PlayStateChangeables.botPlay || PauseSubState.inMenu) {
 			if (visible)
 			{
 				// Update the button, but only if at least either touches are enabled
