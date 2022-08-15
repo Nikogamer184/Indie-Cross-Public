@@ -266,6 +266,7 @@ class FlxTypedButton<T:FlxSprite> extends FlxSprite implements IFlxInput
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+
 		if (!PlayStateChangeables.botPlay) {
 			if (visible)
 			{
