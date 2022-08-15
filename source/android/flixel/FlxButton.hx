@@ -266,24 +266,24 @@ class FlxTypedButton<T:FlxSprite> extends FlxSprite implements IFlxInput
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-
-		if (visible && !PlayStateChangeables.botPlay)
-		{
-			// Update the button, but only if at least either touches are enabled
-			#if FLX_POINTER_INPUT
-			updateButton();
-			#end
-
-			// Trigger the animation only if the button's input status changes.
-			if (lastStatus != status)
+		if (!PlayStateChangeables.botPlay) {
+			if (visible)
 			{
-				updateStatusAnimation();
-				lastStatus = status;
-			}
-		}
+				// Update the button, but only if at least either touches are enabled
+				#if FLX_POINTER_INPUT
+				updateButton();
+				#end
 
+				// Trigger the animation only if the button's input status changes.
+				if (lastStatus != status)
+				{
+					updateStatusAnimation();
+					lastStatus = status;
+				}
+			}
 		input.update();
 	}
+}
 
 	function updateStatusAnimation():Void
 		animation.play(statusAnimations[status]);
