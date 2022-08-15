@@ -291,26 +291,25 @@ class PauseSubState extends MusicBeatSubstate
 			case 'Options':
 				if (exitStateTimeDelay <= 0.0)
 				{
+					inMenu = false;
+
 					FlxTween.globalManager.active = true;
 
 					PlayState.instance.defaultBrightVal = 0;
 					setBrightness(0);
 
 					OptionsMenu.fromFreeplay = true;
-
-					inMenu = false;
-
 					FlxG.switchState(new OptionsMenu());
 				}
 			case "Restart Song":
 				if (exitStateTimeDelay <= 0.0)
 				{
+					inMenu = false;
+
 					FlxTween.globalManager.active = true;
 
 					PlayState.instance.defaultBrightVal = 0;
 					setBrightness(0);
-
-					inMenu = false;
 
 					PlayState.instance.playerDie();
 					close();
