@@ -304,8 +304,6 @@ class PauseSubState extends MusicBeatSubstate
 			case "Restart Song":
 				if (exitStateTimeDelay <= 0.0)
 				{
-					inMenu = false;
-
 					FlxTween.globalManager.active = true;
 
 					PlayState.instance.defaultBrightVal = 0;
