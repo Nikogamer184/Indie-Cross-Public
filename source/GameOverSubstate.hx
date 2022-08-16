@@ -264,6 +264,9 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	function backOut()
 	{
+
+		PauseSubState.inMenu = false;
+
 		FlxG.sound.music.stop();
 
 		Application.current.window.title = Main.appTitle;
