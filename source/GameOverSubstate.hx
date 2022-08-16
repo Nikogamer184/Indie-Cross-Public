@@ -38,6 +38,8 @@ class GameOverSubstate extends MusicBeatSubstate
 	{
 		super();
 
+		PauseSubState.inMenu = true;
+
 		var daBf:String = '';
 		daBf = gameOverChar;
 
@@ -292,6 +294,8 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	function endBullshit():Void
 	{
+		PauseSubState.inMenu = false;
+
 		if (!isEnding)
 		{
 			isEnding = true;
